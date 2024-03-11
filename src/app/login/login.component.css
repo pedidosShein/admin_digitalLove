@@ -1,12 +1,68 @@
-  form{
+  body{
     height: 100vh;
     width: 100%;
+    font-family: "Source Sans 3", sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: "Source Sans 3", sans-serif;
-
-    
   }
 
+  .login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 16px;
+    height: 35rem;
+    width: 30%;
+  }
+
+  img{
+    border-radius: 16px;
+    height: 15rem;
+    margin: 3rem;
+  }
+
+  input{
+    border-radius: 8px;
+    border: none;
+    padding: 0.5rem  3rem;
+    margin: 1rem 0;
+  }
+
+  button{
+    display: flex;
+    justify-content: center;
+    /* background: #E4FE45; */
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    margin:  2rem auto;
+    padding: 0.5rem  2rem;
+  }
+
+  button:hover{
+    transform: scale(1.2);
+    background: #E4FE45;
+  }
+
+  @media screen and (max-width:770px) {
+    .login{
+      width: 70%;
+    }
+
+    img{
+      height: 25%;
+    }
+  
+    input{ 
+      padding: 0.5rem  1.5rem;
+    }
+  
+    button{
+      padding: 0.5rem  2rem;
+      background: #E4FE45;
+    }
+  }

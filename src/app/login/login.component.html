@@ -2,21 +2,30 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     <title>Digital Love</title>
 </head>
 <body>
-    <form action="">
-        <label for="usuario">Usuario:</label>
-        <input type="text" id="usuario" name="usuario">
+    <section class="login">
+        
+        <img src="../../assets/love3.png" alt="Logo Digital Love">
+            
+        <div>
+            <form action="">
+                <input type="text" id="usuario" name="usuario" placeholder="Usuario">
+                <br>
+                
+                <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña">
+                <br>
+                
+                <button type="submit" routerLink="/panel">Iniciar</button>
+            </form>
+        </div>
 
-        <label for="contrasena">Contraseña:</label>
-        <input type="password" id="contrasena" name="contrasena">
-
-        <input type="button" value="Iniciar" routerLink="/panel">
-    </form>
+    </section>
+    
 </body>
 </html>
