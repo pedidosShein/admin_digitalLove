@@ -1,6 +1,5 @@
-  html{
+  *{
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    background-color: #7D53B5;
+    font-family: "Source Sans 3", sans-serif;
   }
