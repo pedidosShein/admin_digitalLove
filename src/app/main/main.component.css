@@ -1,8 +1,36 @@
 body{
     overflow-x: hidden;
+    border-right: 5rem;
+    padding-right: 2rem;
 }
 
-.contenedor {
+#titulo{
+    color: #7D53B5;
+    font-size: 36px;
+}
+
+.seccion {
     position: relative;
     left: 150px;
+    padding-top: 3rem;
+}
+
+.contenedor{
+    height: 27rem;
+    width: 84%;
+    padding: 2rem;
+    padding-right: 2rem;
+    border-radius: 2rem;
+    background-color: #dfdfdf;
+}
+
+.caja{
+    height: 12rem;
+    width: 12rem;
+    background-color: white;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
