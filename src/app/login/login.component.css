@@ -48,13 +48,13 @@
     background: #E4FE45;
   }
 
-  @media screen and (max-width:770px) {
+  @media screen and (max-width:800px) {
     .login{
-      width: 70%;
+      width: 87%;
     }
 
     img{
-      height: 25%;
+      width: 20rem;
     }
   
     input{ 
