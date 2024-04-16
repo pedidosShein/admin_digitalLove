@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./login.component.css">
+    <title>Digital Love</title>
+</head>
+<body>
+    <section class="login">
+        
+        <img id="logologin" src="../../assets/love3.png" alt="Logo Digital Love">
+            
+        <div>
+            <form formGroup="loginForm" (ngSubmit)="onSubmit()" action="/panel" id="form-isesion" name="formulario">
+                <input type="text" formControlName="usuario" id="usuario" name="usuario" placeholder="Usuario" required>
+                <br>
+                
+                <input type="password" formControlName="contrasena" id="contrasena" name="contrasena" placeholder="Contraseña" required>
+                <br>
+
+                <input type="submit" id="btn" name="btn" value="Ingresar" routerLink="/tarea" onclick="validar()">
+            </form>
+        </div>
+
+    </section>
+    
+</body>
+<script src="/src/app/login/login.component.ts"></script>
+
+<script>
+    function validar(){
+      var formulario = document.getElementsByName('formulario')[0],
+          elementos = formulario.elements,
+          boton = document.getElementById('btn');
+
+      var validarUsuario = function(e){
+        if(formulario.usuario.value == 0){
+          alert("Completa los campos");
+          e.preventDefault();
+        }
+      };
+
+      var validar = function(e){
+        validarUsuario(e);
+      };
+
+      formulario.addEventListener("submit",validar);
+    }    
+</script>
+
+</html>
