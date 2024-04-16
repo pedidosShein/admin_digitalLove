@@ -9,7 +9,7 @@ body{
     font-size: 36px;
 }
 
-.seccion {
+.seccion-principal {
     position: relative;
     left: 150px;
     padding-top: 3rem;
@@ -19,18 +19,57 @@ body{
     height: 27rem;
     width: 84%;
     padding: 2rem;
+    padding-left: 4rem;
     padding-right: 2rem;
     border-radius: 2rem;
+    background-color: #dfdfdf;
+    /* columns: 3;
+    column-gap: 20px; */
+}
+
+.caja-superior{
+    display: flex;
+    columns: 3;
+    column-gap: 20px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 1rem;
+    cursor: pointer;
+    
     background-color: #dfdfdf;
 }
 
 .caja{
-    height: 12rem;
-    width: 12rem;
-    background-color: white;
-    border-radius: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    border-radius: 1rem;
+    cursor: pointer;
+    background-color: white;
+    height: 12rem;
+    width: 12rem;
+}
+
+#extra-larga{
+    width: 30rem;
+}
+
+#larga{
+    width: 18rem;
+}
+
+.caja-inferior{
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 1rem;
+    cursor: pointer;
+    height: 12rem;
+    width: 12rem;
+    background-color: white;
 }
