@@ -6,147 +6,40 @@
     <br><br>
     <div class="contenedor1">
       <div class="contenedor2">
-        <!-- <table  *ngIf="Lista_Asistencia" class="table" style="margin-top: 20px"> -->
+        <!-- <table  *ngIf="Lista_Asistencia" class="tabla"> -->
         <table>
           <thead class=" encabezado">
             <tr>
-              <!-- <th>Indice</th> -->
+              <th>ID</th>
+              <th>Tipo de usuario</th>
               <th>Nombre</th>
               <th>Primer Apellido</th>
               <th>Segundo Apellido</th>
+              <th>Edad</th>
+              <th>Genero</th>
+              <th>Telefono</th>
+              <th>Usuario</th>
+              <th>Activo</th>
               <th>Email</th>
-              <th>Contraseña</th>
+              <th>Registro</th>
             </tr>
           </thead>
-          
+
           <tbody>
-            <!-- <ng-container
-              *ngFor="let alumno_recibido of listaAsistencia; let i = index"> -->
-              <tr>
-                <!-- <td>{{ i + 1 }}</td> -->
-              <!--  <td>{{ alumno_recibido.Matricula }}</td>
-                <td>{{ alumno_recibido.Nombre }}</td>
-                <td>{{ alumno_recibido.Carrera }}</td>
-                <td>{{ alumno_recibido.Status }}</td> -->
-                <td>user 1</td>
-                <td>apellido1</td>
-                <td>apellido2</td>
-                <td>user@gmail.com</td>
-                <td>********</td>
-              </tr>
-              <tr>
-                <td>user 2</td>
-                <td>apellido2</td>
-                <td>apellido2</td>
-                <td>user@gmail.com</td>
-                <td>********</td>
-              </tr>
-              <tr>
-                <td>user 3</td>
-                <td>apellido3</td>
-                <td>apellido3</td>
-                <td>user@gmail.com</td>
-                <td>********</td>
-              </tr>
-              <tr>
-                <td>user 4</td>
-                <td>apellido4</td>
-                <td>apellido4</td>
-                <td>user@gmail.com</td>
-                <td>********</td>
-              </tr>
-              <tr>
-                <td>user 4</td>
-                <td>apellido4</td>
-                <td>apellido4</td>
-                <td>user@gmail.com</td>
-                <td>********</td>
-              </tr>
-              <tr>
-                <td>user 4</td>
-                <td>apellido4</td>
-                <td>apellido4</td>
-                <td>user@gmail.com</td>
-                <td>********</td>
-              </tr>
-              <tr>
-                <td>user 4</td>
-                <td>apellido4</td>
-                <td>apellido4</td>
-                <td>user@gmail.com</td>
-                <td>********</td>
-              </tr>
-              <tr>
-                <td>user</td>
-                <td>apellido</td>
-                <td>apellido</td>
-                <td>user@gmail.com</td>
-                <td>********</td>
-              </tr>
-              <tr>
-                <td>user</td>
-                <td>apellido</td>
-                <td>apellido</td>
-                <td>user@gmail.com</td>
-                <td>********</td>
-              </tr>
-              <tr>
-                <td>user</td>
-                <td>apellido</td>
-                <td>apellido</td>
-                <td>user@gmail.com</td>
-                <td>********</td>
-              </tr>
-              <tr>
-                <td>user</td>
-                <td>apellido</td>
-                <td>apellido</td>
-                <td>user@gmail.com</td>
-                <td>********</td>
-              </tr>
-              <tr>
-                <td>user</td>
-                <td>apellido</td>
-                <td>apellido</td>
-                <td>user@gmail.com</td>
-                <td>********</td>
-              </tr>
-              <tr>
-                <td>user</td>
-                <td>apellido</td>
-                <td>apellido</td>
-                <td>user@gmail.com</td>
-                <td>********</td>
-              </tr>
-              <tr>
-                <td>user</td>
-                <td>apellido</td>
-                <td>apellido</td>
-                <td>user@gmail.com</td>
-                <td>********</td>
-              </tr>
-              <tr>
-                <td>user</td>
-                <td>apellido</td>
-                <td>apellido</td>
-                <td>user@gmail.com</td>
-                <td>********</td>
-              </tr>
-              <tr>
-                <td>user</td>
-                <td>apellido</td>
-                <td>apellido</td>
-                <td>user@gmail.com</td>
-                <td>********</td>
-              </tr>
-              <tr>
-                <td>user</td>
-                <td>apellido</td>
-                <td>apellido</td>
-                <td>user@gmail.com</td>
-                <td>********</td>
-              </tr>
-            <!-- </ng-container> -->
+            <tr *ngFor="let user of users">
+              <td>{{user.id}}</td>
+              <td>{{user.tipoUsuario}}</td>
+              <td>{{user.nombre}}</td>
+              <td>{{user.apellidoMaterno}}</td>
+              <td>{{user.apellidoPaterno}}</td>
+              <td>{{user.edad}}</td>
+              <td>{{user.genero}}</td>
+              <td>{{user.telefono}}</td>
+              <td>{{user.usuario}}</td>
+              <td>{{user.activo}}</td>
+              <td>{{user.correo}}</td>
+              <td>{{user.fechaRegistro}}</td>
+            </tr>
           </tbody>
 
         </table>
