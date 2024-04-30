@@ -11,35 +11,25 @@
           <thead class=" encabezado">
             <tr>
               <th>ID</th>
-              <th>Tipo de usuario</th>
-              <th>Nombre</th>
-              <th>Primer Apellido</th>
-              <th>Segundo Apellido</th>
               <th>Edad</th>
               <th>Genero</th>
-              <th>Telefono</th>
               <th>Usuario</th>
-              <th>Activo</th>
               <th>Email</th>
               <th>Registro</th>
             </tr>
           </thead>
 
           <tbody>
-            <tr *ngFor="let user of users">
-              <td>{{user.id}}</td>
-              <td>{{user.tipoUsuario}}</td>
-              <td>{{user.nombre}}</td>
-              <td>{{user.apellidoMaterno}}</td>
-              <td>{{user.apellidoPaterno}}</td>
-              <td>{{user.edad}}</td>
-              <td>{{user.genero}}</td>
-              <td>{{user.telefono}}</td>
-              <td>{{user.usuario}}</td>
-              <td>{{user.activo}}</td>
-              <td>{{user.correo}}</td>
-              <td>{{user.fechaRegistro}}</td>
-            </tr>
+            <ng-container *ngFor="let user of users; let i = index">
+              <tr >
+                <td>{{user.id}}</td>
+                <td>{{user.edad}}</td>
+                <td>{{user.genero}}</td>
+                <td>{{user.usuario}}</td>
+                <td>{{user.correo}}</td>
+                <td>{{user.fechaRegistro}}</td>
+              </tr>
+            </ng-container>
           </tbody>
 
         </table>
