@@ -7,12 +7,13 @@ import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
 import { NavComponent } from './nav/nav.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     MainComponent,
-    NavComponent
+    NavComponent,
   ],
   imports: [
     BrowserModule,

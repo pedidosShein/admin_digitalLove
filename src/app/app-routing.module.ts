@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -7,6 +8,8 @@ import { NavComponent } from './nav/nav.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
+  {path: 'mapa',
+  loadChildren: () => import('./mapa/mapa.module').then( m => m.MapaModule ),},
   {path: 'panel', component: MainComponent},
   {path: 'nav', component: NavComponent},
 ];
