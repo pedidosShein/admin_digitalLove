@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit{
+export class LoginComponent {
+  username: string = '';
+  password: string = '';
   loginForm!: FormGroup;
 
-  constructor(
-    private formBuilder: FormBuilder
-  ){}
+  constructor(private loginService: LoginService, private formBuilder: FormBuilder) {}
 
-   ngOnInit() {
+  ngOnInit() {
     this.loginForm=this.formBuilder.group({
       usuario: [
         '',
@@ -29,9 +30,17 @@ export class LoginComponent implements OnInit{
     });
   }
 
-  onSubmit() {
-    if (this.loginForm.valid) {
-    }
+  onSubmit(): void {
+    this.loginService.login({ username: this.username, password: this.password }).subscribe(
+      (response) => {
+        console.log('Login successful:', response);
+      },
+      (error) => {
+        console.error('No válido:', error);
+      }
+    );
   }
+
+  
 
 }
