@@ -11,6 +11,8 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { PerfilComponent } from './perfil/perfil.component';
 
 import {HttpClientModule}  from "@angular/common/http";
+import { MapComponent } from './map/map.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import {HttpClientModule}  from "@angular/common/http";
     NavComponent,
     NotificacioesComponent,
     UsuariosComponent,
-    PerfilComponent
+    PerfilComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,

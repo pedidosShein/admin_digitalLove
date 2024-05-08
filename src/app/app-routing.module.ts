@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -8,9 +9,12 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 
 import { NavComponent } from './nav/nav.component';
+import { MapComponent } from './map/map.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
+  {path: 'maps', loadChildren: () => import('./map/maps/maps.module').then(m => m.MapsModule)},
+  {path: 'map', component: MapComponent},
   {path: 'panel', component: MainComponent},
   {path: 'nav', component: NavComponent},
   { path: 'notificaciones', component: NotificacioesComponent},
