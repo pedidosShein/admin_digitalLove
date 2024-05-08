@@ -1,0 +1,37 @@
+body{
+    overflow-x: hidden;
+    border-right: 5rem;
+    padding-right: 2rem;
+}
+
+.titulo{
+    color: #7D53B5;
+    font-size: 36px;
+}
+
+.seccion-principal {
+    position: relative;
+    left: 150px;
+    padding-top: 3rem;
+}
+
+.contenedor1{
+    height: 28rem;
+    width: 85%;
+    padding: 2rem;
+    border-radius: 2rem;
+    background-color: #dfdfdf;
+    columns: 2;
+}
+
+/* .left{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    
+} */
