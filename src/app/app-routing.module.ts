@@ -9,9 +9,11 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 
 import { NavComponent } from './nav/nav.component';
+import { MapComponent } from './map/map.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
+  {path: 'main', component: MainComponent},
   {path: 'panel', component: MainComponent},
   {path: 'nav', component: NavComponent},
   { path: 'notificaciones', component: NotificacioesComponent},
