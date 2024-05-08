@@ -23,7 +23,7 @@ import { MapComponent } from './map/map.component';
     NotificacioesComponent,
     UsuariosComponent,
     PerfilComponent,
-    MapComponent
+    MapComponent,
   ],
   imports: [
     BrowserModule,
