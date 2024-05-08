@@ -31,7 +31,7 @@ export class LoginComponent {
   }
 
   onSubmit(): void {
-    this.loginService.login({ username: this.username, password: this.password }).subscribe(
+    this.loginService.login().subscribe(
       (response) => {
         console.log('Login successful:', response);
       },

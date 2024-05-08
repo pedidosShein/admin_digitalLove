@@ -16,8 +16,6 @@ export class UsersService {
     const headers = new HttpHeaders({
       'Authorization': 'Bearer ' + this.token
     });
-
-    
     return this.http.get<User[]>(this.apiUrl, { headers });
   }
 }
