@@ -5,4 +5,5 @@ export interface User {
     usuario?:         string;
     correo?:          string;
     fechaRegistro?:   Date;
+    ubicacion?: string;
   }

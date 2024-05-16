@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,12 +13,33 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
+ /*  login(): Promise<boolean> {
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer ' + this.token
+    });
+    let url= this.http.get(this.apiUrl, { headers });
+    
+    return new Promise<boolean>((resolve, reject) => {
+      url.subscribe(
+          (response) => {
+              console.log('Usuario Ingresando', response);
+              resolve(true);
+          },
+          (error) => {
+              console.error('Error', error);
+              reject(false);
+          }
+      );
+    });
+  } */
+
   login(): Observable<any> {
     const headers = new HttpHeaders({
       'Authorization': 'Bearer ' + this.token
     });
-    return this.http.get(this.apiUrl, { headers });
+    let url = this.http.get(this.apiUrl, { headers });
+    return url;
   }
 
-  
+
 }
