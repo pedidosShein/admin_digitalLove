@@ -15,7 +15,7 @@
           "options": {
             "allowedCommonJsDependencies": [
               "lodash"
-           ]
+            ],
             "outputPath": "dist/digital-love",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -94,11 +94,60 @@
             ],
             "scripts": []
           }
+        },
+        "cypress-run": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "digitalLove:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "digitalLove:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "watch": true,
+            "headless": false
+          }
+        },
+        "ct": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "digitalLove:serve",
+            "watch": true,
+            "headless": false,
+            "testingType": "component"
+          },
+          "configurations": {
+            "development": {
+              "devServerTarget": "digitalLove:serve:development"
+            }
+          }
+        },
+        "e2e": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "digitalLove:serve",
+            "watch": true,
+            "headless": false
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "digitalLove:serve:production"
+            }
+          }
         }
       }
     }
   },
   "cli": {
-    "analytics": "9013b81f-e68a-4c5e-96f7-27ab7f4a1dac"
+    "analytics": "9013b81f-e68a-4c5e-96f7-27ab7f4a1dac",
+    "schematicCollections": [
+      "@cypress/schematic",
+      "@schematics/angular"
+    ]
   }
 }
