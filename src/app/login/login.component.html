@@ -1,28 +1,21 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./login.component.css">
-    <title>Digital Love</title>
-</head>
 <body>
     <section class="login">
         
         <img id="logologin" src="../../assets/love3.png" alt="Logo Digital Love">
             
         <div>
-            <form formGroup="loginForm" (ngSubmit)="validar()" action="/panel" name="loginForm">
+            <form formGroup="loginForm" (ngSubmit)="validar()" action="/panel" name="loginForm" id="loginForm">
                 <input type="text" formControlName="usuario" id="usuario" name="usuario" placeholder="Usuario" required>
                 <br>
                 
                 <input type="password" formControlName="contrasena" id="contrasena" name="contrasena" placeholder="Contraseña" required>
                 <br>
 
-                <input type="submit" id="btn" name="btn" value="Ingresar" routerLink="/tarea">
+                <button type="submit" id="btn" name="btn">
+                    Ingresar
+                </button>
             </form>
         </div>
 
     </section>
 </body>
-</html>
