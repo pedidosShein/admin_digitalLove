@@ -12,12 +12,27 @@
     <section class="seccion-principal">
         <h1 id="titulo">Notificaciones</h1>
         <div class="contenedor">
-            <div class="caja">
+                <!-- {
+                    "id": 0,
+                    "motivo": "ACOSO",
+                    "comentario": "string",
+                    "fechaRegistro": "2024-05-21T02:54:02.613Z",
+                    "usuario_reportado": 0
+                  } -->
 
-            </div>
-            <div class="caja">
-               
-            </div>
+            <!-- <ng-container > -->
+            <ng-container *ngFor="let reporte of reportes; let i = index" >
+                <div class="caja">
+                    <p>{{reporte.id}}</p>
+                    <h2>{{reporte.comentario}}</h2>
+                    <p>{{reporte.motivo}}</p>
+                    <p>{{reporte.fechaRegistro}}</p>
+                    <p>{{reporte.usuario_reportado}}</p>
+                    <button>Bloquear usuario</button>
+                    <button>Cancelar</button>
+                </div>
+            </ng-container>
+            
         </div>
     </section>
 </body>

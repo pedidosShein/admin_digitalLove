@@ -27,14 +27,15 @@ body {
 
 .caja {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  /* flex-direction: column;*/
+  justify-content: space-around;
+  align-items: center; 
   overflow: hidden;
   border-radius: 1rem;
   cursor: pointer;
   background-color: white;
-  height: 5rem;
+  padding: 1rem;
+  height: auto;
   width: 95%;
-  margin: 1rem;
+  margin-top: 1.5rem;
 }
