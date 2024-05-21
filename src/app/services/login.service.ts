@@ -32,18 +32,21 @@ export class LoginService {
     });
   } */
 
-  login(username : string, password : string): Observable<any> {
+  login(usuario: string, password: string): Observable<any> {
     const headers = new HttpHeaders({
-      'Authorization': 'Bearer ' + this.token
+      'Authorization': 'Bearer ' + this.token,
+      'Content-Type': 'application/json'
     });
-    let url = this.http.get(this.apiUrl, { headers }).pipe(
+
+    const body = { 
+      "usuario": usuario, 
+      "password": password 
+    };
+
+    return this.http.post(this.apiUrl, body, { headers }).pipe(
       tap((response) => {
-        console.log('Usuario Ingresando', response);
-        localStorage.setItem('credentials', btoa(username + ':' + password));
+        console.log('Login successful:', response);
       })
     );
-    return url;
   }
-
-
 }

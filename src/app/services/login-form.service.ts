@@ -16,7 +16,7 @@ export class LoginFormService {
         [Validators.required, 
           Validators.email]
         ],
-      contrasena: [
+      password: [
         '', 
         [Validators.required, 
           Validators.minLength(6)]

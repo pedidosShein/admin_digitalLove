@@ -40,19 +40,17 @@ export class LoginComponent {
   } */
 
   onSubmit(): void {
-    if (this.loginForm.valid) {
-      const { username, contrasena } = this.loginForm.value;
-      console.log("login");
-      this.loginService.login(username, contrasena).subscribe(
-        (response) => {
-          console.log('Respuesta del servidor:', response);
-        },
-        (error) => {
-          console.error('Invalid username or password', error);
-        } 
-      );
-    }
+    console.log('Formulario:', this.loginForm);
+    console.log(this.loginForm.value);
+    this.loginService.login( this.loginForm.value.usuario, this.loginForm.value.password
+    ).subscribe(
+      (response) => {
+        console.log('Login successful:', response);
+        this.router.navigate(['/panel']);
+      },
+      (error) => {
+        console.error('Login error:', error);
+      }
+    );
   }
-
-
 }
