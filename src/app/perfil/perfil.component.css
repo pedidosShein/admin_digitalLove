@@ -24,14 +24,10 @@ body{
     columns: 2;
 }
 
-/* .left{
+.left{
     display: flex;
     flex-direction: row;
+    height: 5rem;
     
 }
 
-.right{
-    display: flex;
-    flex-direction: column;
-    
-} */

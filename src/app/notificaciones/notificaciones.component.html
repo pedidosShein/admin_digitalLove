@@ -19,13 +19,12 @@
                     "fechaRegistro": "2024-05-21T02:54:02.613Z",
                     "usuario_reportado": 0
                   } -->
-
-            <!-- <ng-container > -->
             <ng-container *ngFor="let reporte of reportes; let i = index" >
                 <div class="caja">
                     <p>{{reporte.id}}</p>
-                    <h2>{{reporte.comentario}}</h2>
                     <p>{{reporte.motivo}}</p>
+                    <h2>{{reporte.comentario}}</h2>
+                    
                     <p>{{reporte.fechaRegistro}}</p>
                     <p>{{reporte.usuario_reportado}}</p>
                     <button>Bloquear usuario</button>

@@ -1,13 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NotificacionesService } from '../services/notificaciones.service';
-
-export interface reporte {
-  id?: number;
-  motivo?: string;
-  comentario?:  string;
-  fechaRegistro?:   Date;
-  usuario_reportado?: number;
-}
+import { reporte } from '../models/notificaciones.model';
 
 @Component({
   selector: 'app-notificacioes',

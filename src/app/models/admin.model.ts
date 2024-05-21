@@ -1,5 +1,4 @@
-export interface Admin {
-    id?:              number;
+export interface admin {
     usuario?:         string;
-    correo?:          string;
+    password?:          string;
   }
