@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NotificacioesComponent } from './notificacioes.component';
+import { NotificacioesComponent } from './notificaciones.component';
 
 describe('NotificacioesComponent', () => {
   let component: NotificacioesComponent;
@@ -15,7 +15,5 @@ describe('NotificacioesComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  
 });

@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
-import { NotificacioesComponent } from './notificacioes/notificacioes.component';
+import { NotificacioesComponent } from './notificaciones/notificaciones.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { NavComponent } from './nav/nav.component';

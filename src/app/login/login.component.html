@@ -4,7 +4,7 @@
         <img id="logologin" src="../../assets/love3.png" alt="Logo Digital Love">
             
         <div>
-            <form formGroup="loginForm" (ngSubmit)="validar()" action="/panel" name="loginForm" id="loginForm">
+            <form formGroup="loginForm" (ngSubmit)="onSubmit()" action="/panel" name="loginForm" id="loginForm">
                 <input type="text" formControlName="usuario" id="usuario" name="usuario" placeholder="Usuario" required>
                 <br>
                 

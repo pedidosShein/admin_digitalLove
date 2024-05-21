@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,9 +9,10 @@ export class LoginService {
   private apiUrl = 'https://gigantic-mora-jazael-3245dd16.koyeb.app/api/v1/loginAdmin/';
   private token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE3NjM1NzUyLCJpYXQiOjE3MTUwNDM3NTIsImp0aSI6IjZiNmNhYjk1NTlmNTRiMDFiZWU1MWEyYjVhMDY3NjdiIiwidXNlcl9pZCI6Mn0.NqvfTuAY4OL9ZsYhXCiYchbvXZ8_d1DoBdLnFLWZz1o';
 
+
   constructor(private http: HttpClient) { }
 
- /*  login(): Promise<boolean> {
+  /* ingresar(): Promise<boolean> {
     const headers = new HttpHeaders({
       'Authorization': 'Bearer ' + this.token
     });
@@ -31,11 +32,16 @@ export class LoginService {
     });
   } */
 
-  login(): Observable<any> {
+  login(username : string, password : string): Observable<any> {
     const headers = new HttpHeaders({
       'Authorization': 'Bearer ' + this.token
     });
-    let url = this.http.get(this.apiUrl, { headers });
+    let url = this.http.get(this.apiUrl, { headers }).pipe(
+      tap((response) => {
+        console.log('Usuario Ingresando', response);
+        localStorage.setItem('credentials', btoa(username + ':' + password));
+      })
+    );
     return url;
   }
 

@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './main/main.component';
 import { NavComponent } from './nav/nav.component';
-import { NotificacioesComponent } from './notificacioes/notificacioes.component';
+import { NotificacioesComponent } from './notificaciones/notificaciones.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { PerfilComponent } from './perfil/perfil.component';
 
