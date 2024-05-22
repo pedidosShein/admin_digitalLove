@@ -16,7 +16,7 @@ body{
 }
 
 .contenedor1{
-    height: 28rem;
+    height: 29rem;
     width: 85%;
     padding: 2rem;
     border-radius: 2rem;
@@ -27,7 +27,17 @@ body{
 .left{
     display: flex;
     flex-direction: row;
-    height: 5rem;
-    
 }
 
+.right{
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+#icono{
+    height: 15rem;
+    width: 15rem;
+}

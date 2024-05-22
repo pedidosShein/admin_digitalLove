@@ -46,7 +46,15 @@ export class LoginService {
     return this.http.post(this.apiUrl, body, { headers }).pipe(
       tap((response) => {
         console.log('Login successful:', response);
+        localStorage.setItem('usuario', usuario);
+        localStorage.setItem('password', password);
+        console.log('guardado en localStorage');
       })
     );
+  }
+
+  logout(){
+    localStorage.removeItem('usuario');
+    localStorage.removeItem('password');
   }
 }

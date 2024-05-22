@@ -1,6 +1,5 @@
 body{
     overflow-x: hidden;
-    border-right: 5rem;
     padding-right: 2rem;
 }
 
@@ -16,7 +15,7 @@ body{
 }
 
 .contenedor1{
-    height: 28rem;
+    height: 29rem;
     width: 85%;
     padding: 2rem;
     border-radius: 2rem;

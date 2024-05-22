@@ -15,12 +15,9 @@ body {
 }
 
 .contenedor {
-  height: 27rem;
-  width: 84%;
-  margin-top: 3%;
+  height: 29rem;
+  width: 85%;
   padding: 2rem;
-  padding-left: 4rem;
-  padding-right: 2rem;
   border-radius: 2rem;
   background-color: #dfdfdf;
 }
@@ -36,6 +33,6 @@ body {
   background-color: white;
   padding: 1rem;
   height: auto;
-  width: 95%;
-  margin-top: 1.5rem;
+  width: 90%;
+  margin: 1rem;
 }
