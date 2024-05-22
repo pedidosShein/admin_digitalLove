@@ -18,11 +18,11 @@ export class MapComponent implements AfterViewInit {
     if ( !this.divMap ) throw 'El elemento HTML no fue encontrado';
 
     const map = new Map({
-      container: this.divMap.nativeElement, 
+      container: this.divMap.nativeElement,
       style: 'mapbox://styles/mapbox/streets-v12',
-      center: [-102.1332, 23.4326], 
-      zoom: 4,
-      accessToken: this.mapboxToken 
+      center: [-102.1332, 23.4326],
+      zoom: 3,
+      accessToken: this.mapboxToken
     });
   }
 
