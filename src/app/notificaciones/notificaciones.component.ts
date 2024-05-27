@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NotificacionesService } from '../services/notificaciones.service';
 import { reporte } from '../models/notificaciones.model';
+import { BloqueoService } from '../services/bloqueo.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmacionBloqueoComponent } from '../confirmacion-bloqueo/confirmacion-bloqueo.component';
 
 @Component({
   selector: 'app-notificacioes',
@@ -11,7 +14,11 @@ import { reporte } from '../models/notificaciones.model';
 export class NotificacioesComponent implements OnInit {
 
   reportes: reporte[] = [];
-  constructor(private notificacionesService: NotificacionesService) { }
+  constructor(
+    private notificacionesService: NotificacionesService,
+    private bloqueoService: BloqueoService,
+    public ventana: MatDialog
+  ) { }
   
   ngOnInit() {
     this.notificacionesService.getReportes().subscribe(
@@ -23,21 +30,18 @@ export class NotificacioesComponent implements OnInit {
       });
   }
 
-  formatDate(date: Date): string {
-    const day = String(date.getDate()).padStart(2, '0');
-    const month = String(date.getMonth() + 1).padStart(2, '0'); // Los meses comienzan desde 0
-    const year = date.getFullYear();
-    const hours = String(date.getHours()).padStart(2, '0');
-    const minutes = String(date.getMinutes()).padStart(2, '0');
-    
-    return `${day}-${month}-${year} ${hours}:${minutes}`;
-}
+  setBloqueo(): void {
+    const ventanaEmergente = this.ventana.open(ConfirmacionBloqueoComponent, 
+      {width: '10rem',
+        data: {}
+      });
+
+      ventanaEmergente.afterClosed().subscribe(result => {
+        if (result) {
+          alert('Usuario ' + result + ' ha sido bloqueado.');
+        }
+      });
+  }
 
   
-
-  getDate(){
-    const fecha = new Date('2024-05-21T03:17:20.036090Z');
-    const formattedDate = this.formatDate(fecha);
-    console.log(formattedDate);
-  }
 }

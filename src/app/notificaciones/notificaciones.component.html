@@ -13,22 +13,15 @@
         <h1 id="titulo">Notificaciones</h1>
         <br>
         <div class="contenedor">
-                <!-- {
-                    "id": 0,
-                    "motivo": "ACOSO",
-                    "comentario": "string",
-                    "fechaRegistro": "2024-05-21T02:54:02.613Z",
-                    "usuario_reportado": 0
-                  } -->
             <ng-container *ngFor="let reporte of reportes; let i = index" >
                 <div class="caja">
                     <p>{{reporte.id}}</p>
                     <p>{{reporte.motivo}}</p>
-                    <h2>{{reporte.comentario}}</h2>
-                    
+                    <h2>{{reporte.comentario}}</h2>                    
                     <p>{{reporte.fechaRegistro}}</p>
                     <p>{{reporte.usuario_reportado}}</p>
-                    <button>Bloquear usuario</button>
+
+                    <button mat-button (click)="setBloqueo()">Bloquear usuario</button>
                     <button>Cancelar</button>
                 </div>
             </ng-container>
