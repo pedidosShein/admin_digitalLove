@@ -47,7 +47,5 @@ import { ConfirmacionBloqueoComponent } from './confirmacion-bloqueo/confirmacio
   ],
   providers: [],
   bootstrap: [AppComponent],
-  /* entryComponents: [ConfirmacionBloqueoComponent] */
-  
 })
 export class AppModule { }
