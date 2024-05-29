@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-
+import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -39,7 +39,7 @@ import { ConfirmacionBloqueoComponent } from './confirmacion-bloqueo/confirmacio
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-
+    MatButtonModule,
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
