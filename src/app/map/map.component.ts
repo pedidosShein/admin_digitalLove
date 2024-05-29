@@ -1,12 +1,7 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { Map, Marker, Popup } from 'mapbox-gl';
-import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-
-interface ApiData {
-  total_usuarios: number;
-  ubicaciones: { [estado: string]: number };
-}
+import { DataService } from './data-map.service';
 
 @Component({
   selector: 'app-map',
@@ -18,7 +13,7 @@ export class MapComponent implements AfterViewInit {
   @ViewChild('map') divMap?: ElementRef;
   mapboxToken = environment.mapbox_key;
 
-  constructor(private http: HttpClient) {}
+  constructor(private dataService: DataService) {}
 
   ngAfterViewInit(): void {
     if (!this.divMap) throw 'El elemento HTML no fue encontrado';
@@ -31,7 +26,7 @@ export class MapComponent implements AfterViewInit {
       accessToken: this.mapboxToken
     });
 
-    this.http.get<ApiData>('').subscribe(data => {
+    this.dataService.getEstadisticas().subscribe(data => {
       Object.entries(data.ubicaciones).forEach(([estado, usuarios]) => {
         if (usuarios > 0) {
           const popup = new Popup({ offset: 25 }).setText(`Estado: ${estado}\nUsuarios activos: ${usuarios}`);
