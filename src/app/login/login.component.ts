@@ -1,8 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { LoginService } from '../services/login.service';
 import { LoginFormService } from '../services/login-form.service';
 import { Router } from '@angular/router';
+import { data } from 'cypress/types/jquery';
+
+/* import { Client } from '@stomp/stompjs';
+import * as SockJS from 'sockjs-client'; */
 
 @Component({
   selector: 'app-login',
@@ -11,8 +15,9 @@ import { Router } from '@angular/router';
   providers: [ LoginFormService ]
 })
 
-export class LoginComponent {
+export class LoginComponent implements OnInit{
   loginForm!: FormGroup;
+  /* private cliente: Client | undefined; */
 
   constructor(
     private loginService: LoginService, 
@@ -20,8 +25,29 @@ export class LoginComponent {
     private router: Router
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
+    /* this.cliente = new Client();
+    this.cliente.webSocketFactory = () => {
+      return new SockJS('http://localhost:8080/ws');
+    } */
+
     this.loginForm = this.formService.formulario();
+
+    this.loginService.connect('ws://20.55.201.18:8000/api/v1/loginAdmin/');
+    this.loginService.getMessages().subscribe((message) => {
+      console.log(message);
+    });
+    //ejemplo de login
+    this.login('username', 'password');
+
+  }
+
+  login(username: string, password: string): void {
+    const loginMensaje = {
+      type: 'login',
+      data: { username, password },
+    };
+    this.loginService.sendMessage(loginMensaje);
   }
   
 
