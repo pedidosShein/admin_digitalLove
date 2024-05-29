@@ -4,6 +4,11 @@ import { Observable } from 'rxjs';
 
 interface ApiData {
   ubicaciones: { [estado: string]: number };
+  total_usuarios: number;
+  estado_con_mas_usuarios: string;
+  usuarios_activos: number;
+  total_reportes: number;
+  estado_con_mas_reportes?: string;
 }
 
 @Injectable({
