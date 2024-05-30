@@ -6,9 +6,10 @@ import { Observable, map } from 'rxjs';
   providedIn: 'root'
 })
 export class BloqueoService {
-  private apiUrl = 'https://gigantic-mora-jazael-3245dd16.koyeb.app/api/v1/bloquearUsuario/{usuario_id}/';
-  private token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE3NjM1NzUyLCJpYXQiOjE3MTUwNDM3NTIsImp0aSI6IjZiNmNhYjk1NTlmNTRiMDFiZWU1MWEyYjVhMDY3NjdiIiwidXNlcl9pZCI6Mn0.NqvfTuAY4OL9ZsYhXCiYchbvXZ8_d1DoBdLnFLWZz1o';
+  private apiUrl = 'https://better-ursola-jazael-26647204.koyeb.app/api/v1/bloquearUsuario/{usuario_id}/';
+  private token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE5NjcwMDQxLCJpYXQiOjE3MTcwNzgwNDEsImp0aSI6IjQ5YWZjNjc3NjhhNDRhZWY4OTIyMTZhOGQ2NGFhYjkzIiwidXNlcl9pZCI6MX0.ArBVzGnU16ApHQdMikrlsGl3Kl1LR6tKjPjWWy21Vgk';
 
+  
   constructor(private http: HttpClient) { }
 
   setBloqueo(usuario_id: string): Observable<any> {

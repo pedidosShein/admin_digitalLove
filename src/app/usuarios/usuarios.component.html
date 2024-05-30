@@ -10,11 +10,12 @@
           <thead class=" encabezado">
             <tr>
               <th>ID</th>
+              <th>Estado</th>
               <th>Edad</th>
               <th>Genero</th>
               <th>Usuario</th>
               <th>Email</th>
-              <th>Registro</th>
+              <!-- <th>Registro</th> -->
             </tr>
           </thead>
 
@@ -22,11 +23,12 @@
             <ng-container *ngFor="let user of users; let i = index">
               <tr >
                 <td>{{user.id}}</td>
+                <td>{{user.estado}}</td>
                 <td>{{user.edad}}</td>
                 <td>{{user.sexo}}</td>
                 <td>{{user.usuario}}</td>
                 <td>{{user.correo}}</td>
-                <td>{{user.fechaRegistro}}</td>
+                <!-- <td>{{user.fechaRegistro}}</td> -->
               </tr>
             </ng-container>
           </tbody>

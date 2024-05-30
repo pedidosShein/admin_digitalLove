@@ -25,6 +25,7 @@ export class NotificacioesComponent implements OnInit, OnDestroy {
     private websocketService: WebsocketService,
     private notificacionesService: NotificacionesService,
     private bloqueoService: BloqueoService,
+    public ventana: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -51,28 +52,10 @@ export class NotificacioesComponent implements OnInit, OnDestroy {
     }
     this.websocketService.disconnect();
   }
-}
-
-  /* reportes: reporte[] = [];
-  constructor(
-    private notificacionesService: NotificacionesService,
-    private bloqueoService: BloqueoService,
-    public ventana: MatDialog
-  ) { }
-  
-  ngOnInit() {
-    this.notificacionesService.getReportes().subscribe(
-      (reportes) => {
-      this.reportes = reportes;
-      },
-      (error) => {
-        console.log('Error al obtener los usuarios:', error);
-      });
-  }
 
   setBloqueo(): void {
     const ventanaEmergente = this.ventana.open(ConfirmacionBloqueoComponent, 
-      {width: '10rem',
+      {width: '20rem',
         data: {}
       });
 
@@ -82,6 +65,4 @@ export class NotificacioesComponent implements OnInit, OnDestroy {
         }
       });
   } 
-}*/
-
-  
+}

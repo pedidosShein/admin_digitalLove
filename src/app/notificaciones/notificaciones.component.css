@@ -20,6 +20,7 @@ body {
   padding: 2rem;
   border-radius: 2rem;
   background-color: #dfdfdf;
+  overflow-y: scroll;
 }
 
 .caja {
@@ -27,7 +28,7 @@ body {
   /* flex-direction: column;*/
   justify-content: space-around;
   align-items: center; 
-  overflow: hidden;
+  
   border-radius: 1rem;
   cursor: pointer;
   background-color: white;
