@@ -22,7 +22,7 @@ export class MapComponent implements AfterViewInit {
       container: this.divMap.nativeElement,
       style: 'mapbox://styles/mapbox/streets-v12',
       center: [-102.1332, 23.4326],
-      zoom: 5,
+      zoom: 4,
       accessToken: this.mapboxToken
     });
 
