@@ -26,7 +26,7 @@ body {
 .container-items {
   height: 30rem;
   width: 103%;
-  padding: 9rem;
+  padding: 6rem;
   padding-top: 2rem;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -54,7 +54,7 @@ body {
 
 .small-card {
   background-color: #f9f9f9;
-  padding: 16px;
+  padding: 12px;
   border-radius: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   flex: 1;
@@ -63,7 +63,7 @@ body {
 
 .medium-card {
   background-color: #f9f9f9;
-  padding: 30px;
+  padding: 32px;
   border-radius: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   flex: 1;
@@ -71,13 +71,12 @@ body {
 
 .small-card h4, .medium-card h4 {
   color: #7D53B5;
-  font-size: 25px;
-
+  font-size: 22px;
+  font-weight: 800;
 }
 
 .small-card p, .medium-card p {
-  color: #35BF64;
-  font-size: 30px;
+  font-size: 22;
 }
 .column-cards {
   display: flex;
