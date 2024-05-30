@@ -26,7 +26,7 @@
     "@angular/router": "^16.2.0",
     "cypress": "^13.9.0",
     "leaflet": "^1.9.4",
-    "mapbox-gl": "^3.3.0",
+    "mapbox-gl": "^3.4.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
