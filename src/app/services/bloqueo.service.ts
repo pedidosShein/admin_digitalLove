@@ -18,7 +18,7 @@ export class BloqueoService {
       'Content-Type': 'application/json'
     });
 
-    const url = `${this.apiUrl}/${usuario_id}`;
+    const url = `${this.apiUrl}/${usuario_id}/`;
 
     return this.http.post(url,{}, { headers }).pipe(
       map((res: any) => {
