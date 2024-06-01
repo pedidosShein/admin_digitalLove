@@ -25,7 +25,8 @@ export class NotificacioesComponent implements OnInit, OnDestroy {
     private websocketService: WebsocketService,
     private notificacionesService: NotificacionesService,
     private bloqueoService: BloqueoService,
-    public ventana: MatDialog
+    public ventana: MatDialog,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -53,7 +54,7 @@ export class NotificacioesComponent implements OnInit, OnDestroy {
     this.websocketService.disconnect();
   }
 
-  setBloqueo(): void {
+  /* setBloqueo(): void {
     const ventanaEmergente = this.ventana.open(ConfirmacionBloqueoComponent, 
       {width: '20rem',
         data: {}
@@ -64,5 +65,25 @@ export class NotificacioesComponent implements OnInit, OnDestroy {
           alert('Usuario ' + result + ' ha sido bloqueado.');
         }
       });
-  } 
+  }  */
+
+  bloquearUsuario(): void {
+    /* const dialogRef = this.dialog.open(ConfirmacionBloqueoComponent, {
+        data: { usuario_id: usuario_id }
+    }); */
+    const dialogRef = this.dialog.open(ConfirmacionBloqueoComponent);
+
+    dialogRef.afterClosed().subscribe(usuario_id => {
+        if (usuario_id) {
+            this.bloqueoService.setBloqueo(usuario_id).subscribe(
+              response => {
+                console.log('Usuario bloqueado:', response);
+            },
+            error => {
+              console.error('Error al bloquear el usuario:', error);
+          }
+          );
+        }
+    });
+}
 }
