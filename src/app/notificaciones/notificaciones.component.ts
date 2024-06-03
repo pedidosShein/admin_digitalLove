@@ -6,6 +6,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { ConfirmacionBloqueoComponent } from '../confirmacion-bloqueo/confirmacion-bloqueo.component';
 import { WebsocketService } from '../services/websocket.service';
 import { Subscription } from 'rxjs';
+import { error } from 'cypress/types/jquery';
+
 
 @Component({
   selector: 'app-notificacioes',
@@ -19,6 +21,7 @@ import { Subscription } from 'rxjs';
 export class NotificacioesComponent implements OnInit, OnDestroy {
   notificaciones: any[] = [];
   reportes: reporte[] = [];
+  fechaFormateada!: string;
   private websocketSubscription!: Subscription;
 
   constructor(
@@ -30,21 +33,23 @@ export class NotificacioesComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    this.notificacionesService.getReportes().subscribe(
+    /* this.notificacionesService.getReportes().subscribe(
       (reportes) => {
       this.reportes = reportes;
       },
       (error) => {
-        console.log('Error al obtener los usuarios:', error);
-      });
+        console.log('Error al obtener los reportes:', error);
+      }); */
+      this.obtenerReportes();
       
       this.websocketService.connect();
-      this.websocketSubscription = this.websocketService.messages.subscribe(
+      this.websocketSubscription =      this.websocketService.messages.subscribe(
         message => {
           console.log('Notification received: ', message);
           this.reportes.push(message);
         }
       );
+      
   }
 
   ngOnDestroy() {
@@ -54,23 +59,19 @@ export class NotificacioesComponent implements OnInit, OnDestroy {
     this.websocketService.disconnect();
   }
 
-  /* setBloqueo(): void {
-    const ventanaEmergente = this.ventana.open(ConfirmacionBloqueoComponent, 
-      {width: '20rem',
-        data: {}
-      });
+  obtenerReportes():void{
+    this.notificacionesService.getReportes().subscribe(
+      data => {
+        this.reportes = data;
+      },
+      error => {
+        console.error('Error al obtener los reportes:', error);
+      }
+    );
+  }
 
-      ventanaEmergente.afterClosed().subscribe(result => {
-        if (result) {
-          alert('Usuario ' + result + ' ha sido bloqueado.');
-        }
-      });
-  }  */
 
   bloquearUsuario(): void {
-    /* const dialogRef = this.dialog.open(ConfirmacionBloqueoComponent, {
-        data: { usuario_id: usuario_id }
-    }); */
     const dialogRef = this.dialog.open(ConfirmacionBloqueoComponent);
 
     dialogRef.afterClosed().subscribe(usuario_id => {
