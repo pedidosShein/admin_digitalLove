@@ -1,5 +1,5 @@
 
 export const environment = {
-  mapbox_key: "pk.eyJ1IjoibWFybGVuZTIxMjEiLCJhIjoiY2x2cjdpZHR5MGwwaTJzbWd5N3p0dHZxbyJ9.GbrtCnBlJx5dV9zFWvc07g",
+  mapbox_key: "pk.eyJ1Ijoic2dlcmFyZG92IiwiYSI6ImNsdm9pcWs4cjBveDIya241NjE3OG01a3kifQ.YyoM1SJESr_g0smLSeoO8A",
   otra: "PROPIEDAD",
 };

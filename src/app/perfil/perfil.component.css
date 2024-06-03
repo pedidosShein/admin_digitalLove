@@ -16,7 +16,7 @@ body{
 }
 
 .contenedor1{
-    height: 28rem;
+    height: 30rem;
     width: 85%;
     padding: 2rem;
     border-radius: 2rem;
@@ -24,14 +24,28 @@ body{
     columns: 2;
 }
 
-/* .left{
+.left{
     display: flex;
     flex-direction: row;
-    
+    height: 90%;
+    padding-left: 6rem;
 }
 
 .right{
     display: flex;
     flex-direction: column;
-    
-} */
+    justify-content: right;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.usuario{
+    text-decoration: underline;
+    font-style: italic;
+    font-weight: 200;
+}
+
+#icono{
+    height: 15rem;
+    width: 15rem;
+}

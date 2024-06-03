@@ -3,46 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>panel</title>
+    <title>Panel</title>
 </head>
-
 <body>
     <app-nav></app-nav>
 
-    <section  class="seccion-principal">
-        <h1 id="titulo">Resumen</h1>
-        <br><br>
-        <div class="contenedor">
-            <div class="caja-superior">
-                <div class="caja">
-                    <h2>info1</h2>
+    <div class="screen-container">
+        <section class="seccion-mapa">
+          <h2 id="titulo">Mapa</h2>
+            <div class="container-items">
+                <div class="top-items">
+                    <div class="map">
+                        <app-map></app-map>
+                    </div>
+                    <aside class="column-cards">
+                        <div class="medium-card">
+                            <h4>Total de usuarios</h4>
+                            <p>{{ totalUsuarios }}</p>
+                        </div>
+                        <div class="medium-card">
+                            <h4>Estado con más usuarios</h4>
+                            <p>{{ estadoConMasUsuarios }}</p>
+                        </div>
+                        <div class="medium-card">
+                            <h4>Total de usuarios activos</h4>
+                            <p>{{ usuariosActivos }}</p>
+                          </div>
+                        </aside>
+                    </div>
+                    <div class="bottom-items">
+                        <div class="row-cards">
+                            <div class="small-card">
+                                <h4>Total de reportes</h4>
+                                <p>{{ totalReportes }}</p>
+                            </div>
+                            <div class="small-card">
+                                <h4>Estado con más reportes</h4>
+                                <p>{{ estadoConMasReportes }}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="caja" id="extra-larga">
-                    <h2>info2</h2>
-                </div>
-
-                <div class="caja">
-                    <h2>info3</h2>
-                </div>
-            </div>
-
-            <br><br>
-
-            <div class="caja-inferior">
-                <div class="caja" id="larga">
-                    <h2>info4</h2>
-                </div>
-                <br><br>
-                <div class="caja" id="larga">
-                    <h2>info5</h2>
-                </div>
-            </div>
-
+            </section>
         </div>
-    </section>
-
-
-
-</body>
-</html>
+    </body>
+    </html>
