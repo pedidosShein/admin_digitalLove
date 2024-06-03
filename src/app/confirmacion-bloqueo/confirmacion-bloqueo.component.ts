@@ -9,22 +9,22 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./confirmacion-bloqueo.component.css']
 })
 export class ConfirmacionBloqueoComponent {
-  usuario_id: string = '';
+  usuario_id!: number;
   bloquear!: FormGroup;
 
   constructor(
     private bloqueo: BloqueoService,
     public dialogRef: MatDialogRef<ConfirmacionBloqueoComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any
+    @Inject(MAT_DIALOG_DATA) public data: {usuario_id: number}
   ) {}
 
-  setBloqueo(){
+  /* setBloqueo(){
     this.usuario_id = this.data.usuario_id;
     this.bloqueo.setBloqueo(this.bloquear.value.usuario_id);
-  }
+  } */
 
   onNoClick(): void{
-    this.dialogRef.close();
+    this.dialogRef.close(false);
   }
 
   onConfirm(): void{
