@@ -37,6 +37,12 @@ body{
     gap: 2rem;
 }
 
+.usuario{
+    text-decoration: underline;
+    font-style: italic;
+    font-weight: 200;
+}
+
 #icono{
     height: 15rem;
     width: 15rem;
