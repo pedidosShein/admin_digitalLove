@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NotificacionesService } from '../services/notificaciones.service';
 import { reporte } from '../models/notificaciones.model';
 import { BloqueoService } from '../services/bloqueo.service';
@@ -6,8 +6,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { ConfirmacionBloqueoComponent } from '../confirmacion-bloqueo/confirmacion-bloqueo.component';
 import { WebsocketService } from '../services/websocket.service';
 import { Subscription } from 'rxjs';
-import { error } from 'cypress/types/jquery';
-
 
 @Component({
   selector: 'app-notificacioes',
@@ -18,7 +16,7 @@ import { error } from 'cypress/types/jquery';
   styleUrls: ['./notificaciones.component.css']
 })
 
-export class NotificacioesComponent implements OnInit, OnDestroy {
+export class NotificacioesComponent implements OnInit {
   notificaciones: any[] = [];
   reportes: reporte[] = [];
   fechaFormateada!: string;
@@ -33,13 +31,6 @@ export class NotificacioesComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    /* this.notificacionesService.getReportes().subscribe(
-      (reportes) => {
-      this.reportes = reportes;
-      },
-      (error) => {
-        console.log('Error al obtener los reportes:', error);
-      }); */
       this.obtenerReportes();
       
       this.websocketService.connect();
@@ -52,13 +43,6 @@ export class NotificacioesComponent implements OnInit, OnDestroy {
       
   }
 
-  ngOnDestroy() {
-    if (this.websocketSubscription) {
-      this.websocketSubscription.unsubscribe();
-    }
-    this.websocketService.disconnect();
-  }
-
   obtenerReportes():void{
     this.notificacionesService.getReportes().subscribe(
       data => {
@@ -69,7 +53,6 @@ export class NotificacioesComponent implements OnInit, OnDestroy {
       }
     );
   }
-
 
   bloquearUsuario(): void {
     const dialogRef = this.dialog.open(ConfirmacionBloqueoComponent);
@@ -86,5 +69,5 @@ export class NotificacioesComponent implements OnInit, OnDestroy {
           );
         }
     });
-}
+  }
 }
