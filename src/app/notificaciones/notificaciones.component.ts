@@ -31,8 +31,6 @@ export class NotificacioesComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-      this.obtenerReportes();
-      
       this.websocketService.connect();
       this.websocketSubscription =      this.websocketService.messages.subscribe(
         message => {
@@ -40,7 +38,7 @@ export class NotificacioesComponent implements OnInit {
           this.reportes.push(message);
         }
       );
-      
+      this.obtenerReportes();
   }
 
   obtenerReportes():void{
