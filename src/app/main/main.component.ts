@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DataService } from '../map/data-map.service';
+import { DataService } from '../services/data-map.service';
 
 @Component({
   selector: 'app-main',

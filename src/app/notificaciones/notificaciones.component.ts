@@ -32,7 +32,7 @@ export class NotificacioesComponent implements OnInit {
 
   ngOnInit(): void {
       this.websocketService.connect();
-      this.websocketSubscription =      this.websocketService.messages.subscribe(
+      this.websocketSubscription = this.websocketService.messages.subscribe(
         message => {
           console.log('Notification received: ', message);
           this.reportes.push(message);
@@ -63,8 +63,7 @@ export class NotificacioesComponent implements OnInit {
             },
             error => {
               console.error('Error al bloquear el usuario:', error);
-          }
-          );
+          });
         }
     });
   }

@@ -23,7 +23,6 @@ export class LoginComponent {
   ngOnInit() {
     this.loginForm = this.formService.formulario();
   }
-  
 
   onSubmit(): void {
     console.log(this.loginForm.value);

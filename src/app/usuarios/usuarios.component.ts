@@ -23,5 +23,4 @@ export class UsuariosComponent implements OnInit{
           console.log('Error al obtener los usuarios:', error);
         });
     }
-    
 }
