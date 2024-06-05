@@ -1,10 +1,9 @@
 <body>
     <app-nav></app-nav>
-
     <section class="seccion-principal">
         <h2 id="titulo">Notificaciones</h2>
         <br>
-        <div class="contenedor">
+        <div class="contenedor1">
             <ng-container *ngFor="let reporte of reportes; let i = index" >
                 <div class="caja">
                         <div class="lista-superior">
@@ -25,11 +24,9 @@
                                 <li>{{reporte.usuario_reportado}}</li>
                             </ul>
                         </div>
-
                     <button (click)="bloquearUsuario()" class="bloqueo">Bloquear usuario</button>
                 </div>
             </ng-container>
-            
         </div>
     </section>
 </body>

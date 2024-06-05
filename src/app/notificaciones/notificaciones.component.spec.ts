@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { NotificacioesComponent } from './notificaciones.component';
 
 describe('NotificacioesComponent', () => {
@@ -14,6 +13,4 @@ describe('NotificacioesComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
-
-  
 });

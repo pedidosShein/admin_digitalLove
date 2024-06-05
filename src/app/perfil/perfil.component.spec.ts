@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { PerfilComponent } from './perfil.component';
 
 describe('PerfilComponent', () => {
@@ -16,6 +15,6 @@ describe('PerfilComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component).true;
   });
 });

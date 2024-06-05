@@ -18,11 +18,6 @@ export class ConfirmacionBloqueoComponent {
     @Inject(MAT_DIALOG_DATA) public data: {usuario_id: number}
   ) {}
 
-  /* setBloqueo(){
-    this.usuario_id = this.data.usuario_id;
-    this.bloqueo.setBloqueo(this.bloquear.value.usuario_id);
-  } */
-
   onNoClick(): void{
     this.dialogRef.close(false);
   }

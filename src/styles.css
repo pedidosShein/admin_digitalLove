@@ -10,6 +10,26 @@ html, body {
 
 body { 
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif; 
+  overflow-x: hidden;
+  padding-right: 2rem;
 }
 
+#titulo {
+  color: #7D53B5;
+  font-size: 36px;
+}
+
+.seccion-principal {
+  position: relative;
+  left: 150px;
+  padding-top: 3rem;
+}
+
+.contenedor1{
+  height: 32rem;
+  width: 85%;
+  padding-left: 3rem;
+  border-radius: 2rem;
+  background-color: #dfdfdf;
+  overflow-y: scroll;
+}

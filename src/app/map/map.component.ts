@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { Map, Marker, Popup } from 'mapbox-gl';
 import { environment } from 'src/environments/environment';
-import { DataService } from './data-map.service';
+import { DataService } from '../services/data-map.service';
 
 @Component({
   selector: 'app-map',

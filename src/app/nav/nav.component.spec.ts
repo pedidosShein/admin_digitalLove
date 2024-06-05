@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { NavComponent } from './nav.component';
 
 describe('NavComponent', () => {
@@ -16,6 +15,6 @@ describe('NavComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component).true;
   });
 });

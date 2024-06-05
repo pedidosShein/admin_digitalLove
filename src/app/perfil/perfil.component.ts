@@ -22,7 +22,6 @@ export class PerfilComponent implements OnInit{
       this.usuario = localStorage.getItem('usuario');
       this.password = localStorage.getItem('password');
       this.passwordOculta = this.ocultarContraseña(this.password);
-
       this.adminService.getAdmin().subscribe(
         (res) => {
           this.admin = res;

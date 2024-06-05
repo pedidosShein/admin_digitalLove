@@ -31,5 +31,4 @@ export class NavComponent implements OnDestroy{
     this.websocketService.disconnect();
     console.log('WebSocket desconectado');
   }
-
 }
