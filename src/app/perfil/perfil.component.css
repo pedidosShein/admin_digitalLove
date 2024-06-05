@@ -1,0 +1,36 @@
+body{
+    border-right: 5rem;
+    padding-right: 2rem;
+}
+
+.contenedor1{
+    height: 30rem;
+    padding: 2rem;
+    columns: 2;
+}
+
+.left{
+    display: flex;
+    flex-direction: row;
+    height: 90%;
+    padding-left: 6rem;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.usuario{
+    text-decoration: underline;
+    font-style: italic;
+    font-weight: 200;
+}
+
+#icono{
+    height: 15rem;
+    width: 15rem;
+}

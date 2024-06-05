@@ -1,0 +1,24 @@
+.caja {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 1rem;
+  cursor: pointer;
+  background-color: white;
+  padding: 1rem;
+  height: auto;
+  width: 90%;
+  margin: 1rem;
+}
+
+li{
+  list-style: none;
+}
+
+.bloqueo{
+  border-radius: 5px;
+  height: 2rem;
+  width: 7rem;
+  background-color: #cfb9ec;
+  border: none;
+}

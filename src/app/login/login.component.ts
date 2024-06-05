@@ -1,37 +1,41 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { LoginService } from '../services/login.service';
+import { LoginFormService } from '../services/login-form.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers: [ LoginFormService ]
 })
-export class LoginComponent implements OnInit{
+
+export class LoginComponent {
   loginForm!: FormGroup;
 
   constructor(
-    private formBuilder: FormBuilder
-  ){}
+    private loginService: LoginService, 
+    private formService: LoginFormService,
+    private router: Router
+  ) {}
 
-   ngOnInit() {
-    this.loginForm=this.formBuilder.group({
-      usuario: [
-        '',
-        [Validators.required,
-        Validators.pattern(/^[A-Za-z0-9._%+-]{8}$/),
-        ],
-      ],
-      contrasena: [
-        '',
-        [Validators.required, Validators.pattern(/^[a-zA-Z0-9!@#$%^&*]{8}$/)],
-      ],
-    });
+  ngOnInit() {
+    this.loginForm = this.formService.formulario();
   }
 
-  onSubmit() {
-    if (this.loginForm.valid) {
-    }
+  onSubmit(): void {
+    console.log(this.loginForm.value);
+    this.loginService.login( this.loginForm.value.usuario, this.loginForm.value.password
+    ).subscribe(
+      (response) => {
+        console.log('Login successful:', response);
+        this.router.navigate(['/panel']);
+      },
+      (error) => {
+        console.error('Login error:', error);
+        alert("Datos incorrectos");
+      }
+    );
   }
-
 }

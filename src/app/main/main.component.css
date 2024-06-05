@@ -1,68 +1,78 @@
-body{
-    overflow-x: hidden;
-    border-right: 5rem;
-    padding-right: 2rem;
+.screen-container {
+  padding-right: 16rem;
 }
 
-#titulo{
-    color: #7D53B5;
-    font-size: 36px;
+.contenedor1 {
+  height: 30rem;
+  width: 105%;
+  padding: 2rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-.seccion-principal {
-    position: relative;
-    left: 150px;
-    padding-top: 3rem;
+.map {
+  display: flex;
+  overflow: hidden;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding-right: 5rem;
+  padding-left: 5rem;
+  flex-grow: 1;
+  border: 10px;
+  height: 380px;
 }
 
-.contenedor{
-    height: 27rem;
-    width: 84%;
-    padding: 2rem;
-    padding-left: 4rem;
-    padding-right: 2rem;
-    border-radius: 2rem;
-    background-color: #dfdfdf;
-    /* columns: 3;
-    column-gap: 20px; */
+.small-card {
+  background-color: #f9f9f9;
+  padding: 12px;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 1;
 }
 
-.caja-superior{
-    display: flex;
-    columns: 3;
-    column-gap: 20px;
-    overflow: hidden;
-    border-radius: 1rem;
-    cursor: pointer;
-    background-color: #dfdfdf;
+.medium-card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 1;
 }
 
-.caja{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    border-radius: 1rem;
-    cursor: pointer;
-    background-color: white;
-    height: 12rem;
-    width: 12rem;
+.small-card h4, .medium-card h4 {
+  color: #7D53B5;
+  font-size: 15px;
+  font-weight: 800;
 }
 
-#extra-larga{
-    width: 30rem;
+.small-card p, .medium-card p {
+  font-size: 15px;
 }
 
-#larga{
-    width: 30rem;
+.column-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex-basis: 30%;
 }
 
-.caja-inferior{
-    display: flex;
-    columns: 3;
-    column-gap: 30px;
-    overflow: hidden;
-    border-radius: 1rem;
-    cursor: pointer;
+.row-cards {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-basis: 100%;
+}
+
+.top-items {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.bottom-items {
+  display: flex;
+  gap: 20px;
 }
