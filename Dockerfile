@@ -1,5 +1,5 @@
 # Use an official Node runtime as a parent image
-FROM node:16 AS build
+FROM node:latest AS build
 
 # Set the working directory
 WORKDIR /app
@@ -20,7 +20,10 @@ RUN npm run build
 FROM nginx:alpine
 
 # Copy the built Angular application from the previous stage
-COPY --from=build /app/dist/digital-love /usr/share/nginx/html
+COPY --from=build /app/dist/digital-love/ /usr/share/nginx/html/
+
+# Copy custom nginx configuration
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expose port 80
 EXPOSE 80
