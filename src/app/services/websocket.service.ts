@@ -9,9 +9,10 @@ export class WebsocketService {
   private mensajeSubject: Subject<any> = new Subject<any>();
 
   constructor(private ngZone: NgZone) { }
+  
 
   connect() {
-    this.socket = new WebSocket(`ws://better-ursola-jazael-26647204.koyeb.app/ws/admin/reports/`);
+    this.socket = new WebSocket(`ws://20.55.201.18:8000/ws/admin/reports/`);
 
     this.socket.onmessage = (event) => {
       this.ngZone.run(() => {
